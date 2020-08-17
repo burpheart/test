@@ -1,6 +1,17 @@
 #!/bin/sh
-git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git && cd nv-codec-headers && make && sudo make install
-wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz && tar zxvf yasm-1.3.0.tar.gz && cd yasm-1.3.0 && ./configure && make && make install
+cd /tmp
+git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
+cd nv-codec-headers
+sudo make
+sudo make install
+cd /tmp
+wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz 
+tar zxvf yasm-1.3.0.tar.gz
+cd yasm-1.3.0
+./configure
+make
+make install
+cd /tmp
 git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
 cd ffmpeg 
 ./configure --disable-asm --disable-x86asm \
